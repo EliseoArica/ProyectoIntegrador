@@ -9,7 +9,10 @@ class Postulation extends Model
     protected $table = 'postulations';
 
     protected $fillable = [
-        'answer'
+        'answer',
+        'question_id',
+        'student_id',
+        'offer_id',
     ];
 
     public function question() {

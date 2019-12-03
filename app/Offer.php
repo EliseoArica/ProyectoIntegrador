@@ -3,26 +3,33 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Offer extends Model
 {
+    
+    use SoftDeletes;
 
     const OFERTA_ACTIVA = 'A';
     const OFERTA_CADUCADA = 'C';
 
     protected $table = 'offers';
 
+    protected $dates = ['deleted_at'];
+
     protected $fillable = [
         'title',
-        'estado',
+        'status',
         'expiration_date',
         'description',
         'salary',
-        'address'
+        'address',
+        'company_id',
+        'category_id',
     ];
 
-    public function isExpired() {
-        return $this->expiration_date == Offer::OFERTA_CADUCADA;
+    public function estaExpirada() {
+        return $this->status == Offer::OFERTA_CADUCADA;
     }
 
     public function questions() {

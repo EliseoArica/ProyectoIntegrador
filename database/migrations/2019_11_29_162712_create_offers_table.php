@@ -25,6 +25,7 @@ class CreateOffersTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('category_id');
+            $table->softDeletes();
 
             $table->foreign('company_id')->references('id')->on('companies');
             $table->foreign('category_id')->references('id')->on('categories');

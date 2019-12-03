@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Company extends Model
+class Company extends User
 {
     protected $table = 'companies';
 
@@ -14,7 +14,7 @@ class Company extends Model
         'representative',
         'ruc',
         'logo',
-        'description'
+        'description',
     ];
 
     //Relación de uno a muchos

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Student extends Model
+class Student extends User
 {
     protected $table = 'students';
 
@@ -12,7 +12,7 @@ class Student extends Model
         'name',
         'surname',
         'description',
-        'image'
+        'image',
     ];
 
     public function offers() {
