@@ -1,0 +1,650 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+/*** Add your styles here **/
+
+.todo {
+    background-color: #f5f5f5;
+}
+
+
+/** Fondo **/
+
+.fondo {
+    background-image: url("../../images/fondoprincipal.jpg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) {
+    .fondo {
+        background-size: cover;
+    }
+}
+
+.fondo h4 {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cuadrouno .container {
+    background-color: #DFEFF7;
+    border-right: #027DF1;
+    border-right-width: 10px
+}
+
+.cuadrouno {
+    border-right: #027DF1;
+    border-right-width: 10px
+}
+
+.cuadrouno h3 {
+    color: #40A1CE;
+    font-size: 2.5rem;
+}
+
+.cuadrouno h5 {
+    color: #a7a7a7;
+    font-size: 1.5rem;
+}
+
+.cuadrodos .container {
+    background-color: #DFEFF7;
+}
+
+.cuadrodos h3 {
+    color: #40A1CE;
+    font-size: 2.5rem;
+}
+
+.cuadrodos h5 {
+    color: #a7a7a7;
+    font-size: 1.5rem;
+}
+
+.cuadrotres .container {
+    background-color: #DFEFF7;
+}
+
+.cuadrotres h3 {
+    color: #40A1CE;
+    font-size: 2.5rem;
+}
+
+.cuadrotres h5 {
+    color: #a7a7a7;
+    font-size: 1.5rem;
+}
+
+
+/**Nuevo sitio**/
+
+.encabezado {
+    color: #40A1CE;
+    font-size: 2rem;
+}
+
+.uno {
+    font-size: 1.2rem;
+}
+
+.padre .btn-outline-primary {
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .2em;
+}
+
+.cartas .imagelogo {
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 99%;
+    right: 0;
+    top: 0;
+}
+
+.card-img-top {
+    max-width: 250px;
+}
+
+.postulaciones {
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 99%;
+    right: 0;
+    top: 0;
+    max-width: 100px;
+}
+
+.cartas .btn-primary {
+    border-radius: 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    background-color: #40A1CE;
+    border: none;
+}
+
+.cartas .btn-primary:hover {
+    background-color: #0081BD;
+}
+
+.imagen {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.color {
+    background-color: #D9FFEC;
+}
+
+.color2 {
+    background-color: #CDE4EF;
+}
+
+.expandir {
+    height: 6rem;
+    width: 100%;
+    padding: 3px;
+}
+
+.editar label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: #027DF1;
+}
+
+.form-group {
+    border-radius: 20px;
+}
+
+.botonPostular {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: .1em;
+    font-family: 'Lato', sans-serif;
+}
+
+.completar .btn-primary {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 20px;
+    letter-spacing: .1em;
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.filtro-header {
+    background-color: #81BD00;
+    color: #ffffff;
+}
+
+.filtro-header h6 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-top: 6px;
+}
+
+.categoria label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+}
+
+.badge-info {
+    background-color: #AEAEAE;
+}
+
+.list-group-item-action:hover {
+    background-color: #1ba7b1;
+    transition: all 0.25s ease-out;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    border: none;
+    border-radius: 8px;
+}
+
+.list-group-item-action:hover::before {
+    transform: scale(21);
+}
+
+.list-group-item-action:hover h5 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+}
+
+.list-group-item-action:hover p {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+}
+
+.list-group-item-action:hover small {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+}
+
+.list-group-item {
+    border-radius: 4px;
+    box-shadow: 1px 2px 4px rgba(38, 38, 38, 0.2);
+    border: 1px solid rgb(235, 235, 235);
+}
+
+.completar .btn-primary {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 20px;
+    letter-spacing: .1em;
+    font-family: 'Lato', sans-serif;
+}
+
+.color {
+    background-color: #D9FFEC;
+}
+
+.color2 {
+    background-color: #CDE4EF;
+}
+
+.editar label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: #027DF1;
+}
+
+.form-group {
+    border-radius: 20px;
+}
+
+
+/**Navegacion**/
+
+.navbar-brand {
+    color: #ffffff!important;
+    font-size: 2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.navegacion {
+    background-color: #0081BD!important;
+}
+
+.nav-link {
+    color: #ffffff!important;
+    font-size: 1.4rem;
+    transition: background-color .5s ease-in-out;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+
+
+/* stroke */
+
+nav.stroke ul li a,
+nav.fill ul li a {
+    position: relative;
+}
+
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: rgb(106, 230, 35);
+    height: 2.5px;
+}
+
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+nav.fill ul li a {
+    transition: all 2s;
+}
+
+nav.fill ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+
+nav.fill ul li a:hover {
+    color: #fff;
+    z-index: 1;
+}
+
+nav.fill ul li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+
+
+/* Keyframes */
+
+@-webkit-keyframes fill {
+    0% {
+        width: 0%;
+        height: 1px;
+    }
+    50% {
+        width: 100%;
+        height: 1px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        background: #333;
+    }
+}
+
+
+/* Keyframes */
+
+@-webkit-keyframes circle {
+    0% {
+        width: 1px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        height: 1px;
+        z-index: -1;
+        background: #eee;
+        border-radius: 100%;
+    }
+    100% {
+        background: #aaa;
+        height: 5000%;
+        width: 5000%;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 0;
+    }
+}
+
+.hamburguesa .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.cartas .imagelogo {
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 99%;
+    right: 0;
+    top: 0;
+}
+
+.card-img-top {
+    max-width: 250px;
+}
+
+.postulaciones {
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    max-height: 99%;
+    right: 0;
+    top: 0;
+    max-width: 100px;
+}
+
+.cartas .btn-primary {
+    border-radius: 20px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    background-color: #40A1CE;
+    border: none;
+}
+
+.cartas .btn-primary:hover {
+    background-color: #0081BD;
+}
+
+.card2 {
+    background-color: #ffffff;
+    box-shadow: 2px 4px 8px rgba(38, 38, 38, 0.2);
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+}
+
+.card2:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -6px;
+    border: 1px solid #247b8a;
+    background-color: white;
+}
+
+.card2:hover:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+}
+
+.pie {
+    background-color: #DFDFDF;
+}
+
+.copyright {
+    color: #979797;
+    font-size: 1rem;
+}
+
+.footer-sitio h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer-sitio p {
+    font-family: 'Raleway', sans-serif;
+}
+
+.color {
+    background-color: #D9FFEC;
+}
+
+.color2 {
+    background-color: #CDE4EF;
+}
+
+.expandir {
+    height: 6rem;
+    width: 100%;
+    padding: 3px;
+}
+
+.editar label {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    color: #027DF1;
+}
+
+.form-group {
+    border-radius: 20px;
+}
+
+.botonPostular {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: .1em;
+    font-family: 'Lato', sans-serif;
+}
+
+.pie {
+    background-color: #DFDFDF;
+}
+
+.copyright {
+    color: #979797;
+    font-size: 1rem;
+}
+
+.footer-sitio h3 {
+    font-family: 'Raleway', sans-serif;
+}
+
+.footer-sitio p {
+    font-family: 'Raleway', sans-serif;
+}
+
+@media (max-width: 1014px) {
+    .centrarResponsive {
+        text-align: center;
+        text-justify: auto;
+    }
+}
+
+.botonPostulantes .btn-success {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botonPostulantes .btn-danger {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.botonPostular {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 20px;
+    letter-spacing: .1em;
+    font-family: 'Lato', sans-serif;
+}
+
+.img-square-wrapper {
+    height: 124px;
+    width: 150px;
+}
+
+.imagenPostulante {
+    background-size: cover;
+}
+
+.card-img-top {
+    width: 150px;
+    padding-left: 0px;
+    background-size: cover;
+}
+
+@media (max-width: 500px) {
+    .imgresponsive {
+        margin-top: 20px;
+    }
+}
+
+.botonInformacion .btn-primary {
+    background-color: #60B0D6;
+    border: none;
+    color: #ffffff;
+    border-radius: 12px;
+    font-family: 'Lato', sans-serif;
+}
+
+@media (max-width: 500px) {
+    .botonInformacion {
+        text-align: center;
+        text-justify: auto;
+    }
+}
