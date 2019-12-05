@@ -7,6 +7,7 @@ use App\Student;
 use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
 
 class UserController extends Controller
 {
@@ -47,23 +48,18 @@ class UserController extends Controller
             
     }
 
-    public function registrar_empresa(Request $request)
+    public function registrarEmpresa(Request $request)
     {
-        $user = User::create([
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-            'role' => $request->get('role'),
-        ]);
-            
-        $company = new Company([
-            'name' => $request->get('name'),
-            'business_name' => $request->get('business_name'),
-            'representative' => $request->get('representative'),
-            'ruc' =>  $request->get('ruc'),
-        ]);
-        
-        return $user->company()->save($company);
-            
+        $email = $request->get('email');
+        $password = $request->get('password');
+        $name = $request->get('name');
+        $business_name = $request->get('business_name');
+        $representative = $request->get('representative');
+        $ruc = $request->get('ruc');
+
+        $registro = DB::select('CALL sp_registrar_empresa(?,?,?,?,?,?)', array($email, $password, $name, $business_name, 
+        $representative, $ruc));
+        return redirect('visualizar');
     }
 
     /**

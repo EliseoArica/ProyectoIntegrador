@@ -25,12 +25,11 @@
 
                 <div class="text-right p-t-13 p-b-23">
                     <span class="txt1">
-                        Olvidaste tu 
+                        <a href="#" class="txt2">
+                            ¿Olvidaste tu contraseña?
+                        </a>
                     </span>
 
-                    <a href="#" class="txt2">
-                        contraseña?
-                    </a>
                 </div>
 
                 <div class="container-login100-form-btn">
