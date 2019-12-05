@@ -35,6 +35,7 @@ Route::get('/register-empresa', function () {
 })->name('register_empresa');
 
 Route::post('/register-empresa', 'User\UserController@registrarEmpresa')->name('registro_empresa');
+Route::post('/register-alumno', 'User\UserController@store')->name('registrar_alumno');
 
 
 

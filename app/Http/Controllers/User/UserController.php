@@ -44,7 +44,8 @@ class UserController extends Controller
             'surname' => $request->get('surname'),
         ]);
         
-        return $user->student()->save($student);
+        $user->student()->save($student);
+        return redirect('visualizar');
             
     }
 
@@ -59,7 +60,7 @@ class UserController extends Controller
 
         $registro = DB::select('CALL sp_registrar_empresa(?,?,?,?,?,?)', array($email, $password, $name, $business_name, 
         $representative, $ruc));
-        return redirect('visualizar');
+        return redirect('postulantes');
     }
 
     /**
