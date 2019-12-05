@@ -26,15 +26,21 @@ Route::get('/login-empresa', function () {
     return view('inicio.loginEmpresa');
 })->name('login_empresa');
 
-Route::get('/resgister-alumno', function () {
+
+
+Route::get('/register-alumno', function () {
     return view('inicio.registerAlumno');
 })->name('register_alumno');
 
-Route::get('/resgister-empresa', function () {
+
+Route::post('/register-alumno', 'User\UserController@store')->name('register');
+
+
+Route::get('/register-empresa', function () {
     return view('inicio.registerEmpresa');
 })->name('register_empresa');
 
-
+Route::post('/register-empresa', 'User\UserController@registrar_empresa')->name('registro_empresa');
 
 
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\User;
 
 use App\User;
+use App\Student;
+use App\Company;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,41 +32,38 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        // Reglas que debe seguir para el registro
-        /** 
-         
-        *$reglas = [
-        *    'email' => 'required|email|unique:users',
-         *   'password' => 'required|min:6|confirmed'
-        *];
+        $user = User::create([
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'role' => $request->get('role'),
+        ]);
+            
+        $student = new Student([
+            'name' => $request->get('name'),
+            'surname' => $request->get('surname'),
+        ]);
         
+        return $user->student()->save($student);
+            
+    }
 
-        *$this->validate($request, $reglas);
-        */
-        /** 
-        *
-        *$campos['password'] = bcrypt($request->password); // Encriptar contraseña
-        *$campos['verified'] = User::USUARIO_NO_VERIFICADO; // Por defecto el usuario no estara verificado
-        *$campos['verification_token'] = User::generarVerificationToken(); // Para generar un token que tendra que corrroborar en su gmail
-        */
-
-        $reglas = [
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed'
-        ];
-
-        $this->validate($request, $reglas);
-
-        $campos = $request->all();
-
-        $campos['password'] = bcrypt($request->password);
-        $campos['verified'] = User::USUARIO_NO_VERIFICADO;
-        $campos['verification_token'] = User::generarVerificationToken();
-       
-
-        $usuario = User::create($campos); //Envia todos los atributos de usuario en un array
-    
-        return response()->json(['data' => $usuario], 201);
+    public function registrar_empresa(Request $request)
+    {
+        $user = User::create([
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'role' => $request->get('role'),
+        ]);
+            
+        $company = new Company([
+            'name' => $request->get('name'),
+            'business_name' => $request->get('business_name'),
+            'representative' => $request->get('representative'),
+            'ruc' =>  $request->get('ruc'),
+        ]);
+        
+        return $user->company()->save($company);
+            
     }
 
     /**

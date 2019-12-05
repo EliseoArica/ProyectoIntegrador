@@ -17,8 +17,8 @@ class CreateStudentsTable extends Migration
             $table->bigIncrements('id')->autoIncrement();
             $table->string('name');
             $table->string('surname');
-            $table->string('description');
-            $table->string('image');
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
 

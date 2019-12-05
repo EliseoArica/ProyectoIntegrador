@@ -19,8 +19,8 @@ class CreateCompaniesTable extends Migration
             $table->string('business_name');
             $table->string('representative');
             $table->string('ruc');
-            $table->string('logo');
-            $table->string('description');
+            $table->string('logo')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
 

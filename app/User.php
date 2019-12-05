@@ -14,6 +14,10 @@ class User extends Authenticatable
     const USUARIO_VERIFICADO = '1';
     const USUARIO_NO_VERIFICADO = '0';
 
+    const USUARIO_ADMINISTRADOR = 'A';
+    const USUARIO_ALUMNO = 'S';
+    const USUARIO_EMPRESA = 'C';
+
     protected $table = 'users';
     protected $dates = ['deleted_at'];
     /**
@@ -44,6 +48,27 @@ class User extends Authenticatable
 
     public static function generarVerificationToken(){
         return str_random(40);
+    }
+
+    public function esAlumno(){
+        return $this->role ==User::USUARIO_ALUMNO;
+    }
+
+    public function esEmpresa(){
+        return $this->role ==User::USUARIO_EMPRESA;
+    }
+
+    public function esAdministrador(){
+        return $this->role ==User::USUARIO_ADMINISTRADOR;
+    }
+
+
+    public function student(){
+        return $this->hasOne('App\Student');
+    }
+
+    public function company(){
+        return $this->hasOne('App\Company');
     }
 
 }
