@@ -44,7 +44,7 @@
                 <ul class="navbar-nav mr-right mr-4" id="ejm2">
                     <li class="nav-item dropdown mx-4">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{auth()->user()->email}}
+                        {{auth()->user()->student->name}}
                       </a>
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('logout') }}"

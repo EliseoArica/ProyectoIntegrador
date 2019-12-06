@@ -24,9 +24,6 @@ Route::get('/login-final', function () {
 
 Route::post('/login/general', 'LoginController@login')->name('loginGeneral');
 
-Route::get('/login-empresa', function () {
-    return view('inicio.loginEmpresa');
-})->name('login_empresa');
 
 Route::get('/register-alumno', function () {
     return view('inicio.registerAlumno');

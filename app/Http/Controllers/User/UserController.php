@@ -64,7 +64,7 @@ class UserController extends Controller
 
         $reglas = [
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required',
             'name' => 'required',
             'business_name' => 'required',
             'representative' => 'required',
@@ -92,6 +92,23 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        $usuario = User::findOrFail($id);
+        
+        return response()->json(['data' => $usuario], 200);
+    }
+
+
+
+    public function editarAlumno(User $user)
+    {
+        $usuario = User::findOrFail($id);
+        
+        return response()->json(['data' => $usuario], 200);
+    }
+
+
+    public function editarEmpresa(User $user)
     {
         $usuario = User::findOrFail($id);
         
