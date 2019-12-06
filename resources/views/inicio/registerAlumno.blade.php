@@ -1,7 +1,7 @@
 @extends('layouts.appf')
 
 @section('title')
-    Refistrarse
+    Registrarse
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                 @method('POST')
                  
                 <span class="login100-form-title">
-                    Inicia Sesión
+                    Registrate
                 </span>
 
                 <div class="wrap-input100 mb-4">
@@ -43,11 +43,11 @@
 
                 <div class="text-right p-t-13 p-b-23">
                     <span class="txt1">
-                        Ya tienes una  
+                        Ya tienes una cuenta? 
                     </span>
 
-                    <a href="#" class="txt2">
-                        cuenta?
+                    <a href={{route('login_alumno')}} class="txt2">
+                        Ingresa Aquí
                     </a>
                 </div>
 

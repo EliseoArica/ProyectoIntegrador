@@ -57,7 +57,7 @@
                         Ya tienes una cuenta?
                     </span>
 
-                    <a href="#" class="txt2">
+                    <a href={{route('login_empresa')}} class="txt2">
                         Ingresa Aquí
                     </a>
                 </div>

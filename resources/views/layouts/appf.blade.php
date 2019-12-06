@@ -37,7 +37,7 @@
                     </li>
                     <li class="nav-item dropdown mx-4">
                         <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Resgistrarse
+                        Registrarse
                       </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{route('register_alumno')}}">Alumno</a>
@@ -45,15 +45,8 @@
                             <a class="dropdown-item" href="{{route('register_empresa')}}">Empresa</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown mx-4">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Iniciar Sesión
-                      </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{route('login_alumno')}}">Alumno</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{route('login_empresa')}}">Empresa</a>
-                        </div>
+                    <li class="nav-item active mx-4">
+                        <a class="nav-link" href="{{route('login_final')}}">Iniciar sesión<span class=" sr-only ">(current)</span></a>
                     </li>
                 </ul>
             </div>

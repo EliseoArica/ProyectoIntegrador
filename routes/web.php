@@ -18,9 +18,11 @@ Route::get('/', function () {
 
 // RUTAS DE INICIO 
 
-Route::get('/login-alumno', function () {
-    return view('inicio.loginAlumno');
-})->name('login_alumno');
+Route::get('/login-final', function () {
+    return view('auth.login');
+})->name('login_final');
+
+Route::post('/login/general', 'LoginController@login')->name('loginGeneral');
 
 Route::get('/login-empresa', function () {
     return view('inicio.loginEmpresa');
@@ -36,6 +38,7 @@ Route::get('/register-empresa', function () {
 
 Route::post('/register-empresa', 'User\UserController@registrarEmpresa')->name('registro_empresa');
 Route::post('/register-alumno', 'User\UserController@store')->name('registrar_alumno');
+
 
 
 
@@ -88,4 +91,6 @@ Route::get('/postulantes', function () {
 })->name('postulantes');
 
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');

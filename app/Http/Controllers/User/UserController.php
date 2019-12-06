@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\User;
 
+use DB;
 use App\User;
 use App\Student;
 use App\Company;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use DB;
 
 class UserController extends Controller
 {
@@ -33,9 +34,18 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $reglas = [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'name' => 'required',
+            'surname' => 'required',
+        ];
+
+        $this->validate($request, $reglas);
+
         $user = User::create([
             'email' => $request->get('email'),
-            'password' => $request->get('password'),
+            'password' => Hash::make($request->get('password')),
             'role' => $request->get('role'),
         ]);
             
@@ -51,8 +61,20 @@ class UserController extends Controller
 
     public function registrarEmpresa(Request $request)
     {
+
+        $reglas = [
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'name' => 'required',
+            'business_name' => 'required',
+            'representative' => 'required',
+            'ruc' => 'required',
+        ];
+
+        $this->validate($request, $reglas);
+
         $email = $request->get('email');
-        $password = $request->get('password');
+        $password = Hash::make($request->get('password'));
         $name = $request->get('name');
         $business_name = $request->get('business_name');
         $representative = $request->get('representative');
