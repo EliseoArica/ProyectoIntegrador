@@ -43,22 +43,32 @@
                 </ul>
 
                 <ul class="navbar-nav mr-right mr-4" id="ejm2">
-                    <li class="nav-item dropdown mx-4">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{auth()->user()->email}}
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Cerrar sesión') }}
-                        </a>
+                        @if(!empty(auth()->user()->company->logo))
+                            
+                        <li class="nav-item">
+                            <div class="avatar_mask_empresa">
+                                <img src="logo/{{auth()->user()->company->logo}}" class="avatar_nav_empresa card-img-top">
+                            </div>
+                        </li>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                    </li>
+                        @endif
+
+                        <li class="nav-item dropdown ml-3 mr-4">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{auth()->user()->company->name}}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Cerrar sesión') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                 </ul>
             </div>
         </nav>

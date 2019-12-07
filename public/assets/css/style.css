@@ -660,3 +660,16 @@ nav.fill ul li a:hover:after {
     height: 70px;
     width: 62px;
 }
+
+.avatar_mask_empresa {
+    width: 62px;
+    height: 62px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.avatar_mask_empresa img {
+    height: 60px;
+    width: 64px;
+    max-height: 90px;
+}

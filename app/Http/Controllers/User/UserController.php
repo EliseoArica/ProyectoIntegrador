@@ -56,7 +56,8 @@ class UserController extends Controller
         ]);
         
         $user->student()->save($student);
-        return redirect('visualizar');
+
+        return view('auth.login');
             
     }
 
@@ -72,9 +73,28 @@ class UserController extends Controller
             'ruc' => 'required',
         ];
 
-        $this->validate($request, $reglas);
+        $this->validate($request, $reglas); 
 
-        $email = $request->get('email');
+
+        $user = User::create([
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
+            'role' => $request->get('role'),
+        ]);
+            
+        $company = new Company([
+            'name' => $request->get('name'),
+            'business_name' => $request->get('business_name'),
+            'representative' => $request->get('representative'),
+            'ruc' => $request->get('ruc'),
+        ]);
+        
+        $user->company()->save($company);
+        
+        return view('auth.login');
+    }
+
+        /*$email = $request->get('email');
         $password = Hash::make($request->get('password'));
         $name = $request->get('name');
         $business_name = $request->get('business_name');
@@ -83,8 +103,7 @@ class UserController extends Controller
 
         $registro = DB::select('CALL sp_registrar_empresa(?,?,?,?,?,?)', array($email, $password, $name, $business_name, 
         $representative, $ruc));
-        return redirect('postulantes');
-    }
+        return redirect('postulantes');*/
 
     /**
      * Display the specified resource.
@@ -219,18 +238,18 @@ class UserController extends Controller
 
 
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        if ($request->hasFile('logo')) {
+            $file = $request->file('logo');
             $filename = time().$file->getClientOriginalName();
             $file->move(\public_path().'/logo/',$filename);
 
             $usu->email = $request->get('email');
             $company->name = $request->get('name');
-            $company->description = $request->get('business_name');
-            $company->description = $request->get('representative');
-            $company->description = $request->get('ruc');
+            $company->business_name = $request->get('business_name');
+            $company->representative = $request->get('representative');
+            $company->ruc = $request->get('ruc');
             $company->description = $request->get('description');
-            $company->image = $filename;
+            $company->logo = $filename;
 
             $usu->company()->save($company);
 
@@ -240,7 +259,6 @@ class UserController extends Controller
         return redirect()->back();
 
     }
-
 
     /**
      * Update the specified resource in storage.

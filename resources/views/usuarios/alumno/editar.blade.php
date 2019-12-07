@@ -24,7 +24,7 @@
             <div class="form-group row color py-5 my-5 justify-content-center align-items-centers">
                 <label for="email" class="col-sm-5 col-form-label mb-2">Email</label>
                 <div class="col-sm-6">
-                <input type="email" class="form-control" id="email" name="email" value="{{ $usuarios->email }}" required >
+                <input type="email" class="form-control" id="email" name="email" value="{{ $usuarios->email }}" required disabled >
                 </div>
             </div>
 
@@ -38,7 +38,7 @@
             <div class="form-group row color py-5 my-5 justify-content-center align-items-center">
                 <label for="description" class="col-sm-5 col-form-label mb-2">Formación academica y estudios</label>
                 <div class="col-sm-6">
-                <textarea class="form-control ckeditor" name="description" id="description" value="{{ $alumnos->description }}" required></textarea>
+                <textarea class="form-control ckeditor" name="description" id="description" value="{{ $alumnos->description }}"></textarea>
                 </div>
             </div>
 

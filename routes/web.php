@@ -45,9 +45,9 @@ Route::get('/inicio', function () {
     return view('inicio.home');
 })->name('inicio');
 
-Route::get('/visualizar', function () {
-    return view('usuarios.alumno.visualizar');
-})->name('visualizar');
+Route::get('/visualizar', 'Offer\OfferController@index')->name('visualizar'); 
+Route::get('/detalle_oferta', 'Offer\OfferController@show')->name('detalle_oferta');
+
 
 Route::get('/postular', function () {
     return view('usuarios.alumno.postular');
@@ -63,9 +63,6 @@ Route::get('/editar_alumno', 'User\UserController@mostrarAlumno')->name('editar_
 Route::put('/alumno_actualizado', 'User\UserController@actualizarAlumno')->name('actualizar_alumno');
 
 
-Route::get('/detalle-oferta', function () {
-    return view('usuarios.alumno.detalle');
-})->name('detalle_oferta');
 
 
 // RUTAS DE LA EMPRESA 
@@ -93,6 +90,17 @@ Route::get('/postulante-oferta', function () {
 Route::get('/postulantes', function () {
     return view('usuarios.empresa.postulantes');
 })->name('postulantes');
+
+
+
+
+
+
+
+
+
+
+
 
 
 Auth::routes();

@@ -62,7 +62,7 @@
 
             <main class="col-sm-8 contenido-principal">
                 <div class="list-group">
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
+                    <a href="{{route('detalle_oferta')}}" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
                         <div class="d-flex">
                             <div class="imagen">
                                 <img src={{ asset('images/Logo2.PNG') }} class="img-fluid img" alt="">
@@ -205,6 +205,7 @@
                         </div>
                     </a>
                 </div>
+                
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center mb-5">
                         <li class="page-item">
