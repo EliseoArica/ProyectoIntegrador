@@ -15,7 +15,7 @@ class CreatePostulationsTable extends Migration
     {
         Schema::create('postulations', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
-            $table->string('answer');
+            $table->text('answer');
             $table->timestamps();
             $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('student_id');

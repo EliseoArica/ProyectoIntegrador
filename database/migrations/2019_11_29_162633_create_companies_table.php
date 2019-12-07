@@ -20,7 +20,7 @@ class CreateCompaniesTable extends Migration
             $table->string('representative');
             $table->string('ruc');
             $table->string('logo')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
 

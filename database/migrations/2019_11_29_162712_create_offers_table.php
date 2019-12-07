@@ -19,7 +19,7 @@ class CreateOffersTable extends Migration
             $table->string('title');
             $table->char('estado', 1)->default(Offer::OFERTA_ACTIVA);
             $table->dateTime('expiration_date');
-            $table->string('description');
+            $table->text('description');
             $table->string('salary');
             $table->string('address');
             $table->timestamps();
