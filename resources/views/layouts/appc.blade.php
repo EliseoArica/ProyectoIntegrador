@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Raleway:400,700,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i&display=swap" rel="stylesheet">
+    
     <title> Empresa | @yield('title') </title>
 </head>
 
@@ -88,10 +89,11 @@
 
 
 
-    <script src="{{ URL::asset('assets/js/navbar-animation.js')}}"></script>
     <script src="{{ URL::asset('assets/js/jquery.slim.min.js')}}"></script>
     <script src="{{ URL::asset('assets/js/popper.min.js')}} "></script>
     <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/textoenriquecido.js')}}"></script>
 </body>
 
 </html>

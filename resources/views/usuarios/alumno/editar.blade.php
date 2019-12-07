@@ -17,38 +17,43 @@
 <div class="editar">
     <div class="container">
         <hr>
-        <form>
+        <form method="POST" action="{{route('actualizar_alumno')}}" enctype="multipart/form-data">
+            @method('PUT')
+            @csrf 
 
             <div class="form-group row color py-5 my-5 justify-content-center align-items-centers">
                 <label for="email" class="col-sm-5 col-form-label mb-2">Email</label>
                 <div class="col-sm-6">
-                    <input type="email" class="form-control" id="email" placeholder="khail.mogollon@tecsup.edu.pe">
+                <input type="email" class="form-control" id="email" name="email" value="{{ $usuarios->email }}" required >
                 </div>
             </div>
 
             <div class="form-group row color2 py-5 my-5 justify-content-center align-items-center">
-                <label for="pais" class="col-sm-5 col-form-label mb-2">País</label>
+                <label for="name" class="col-sm-5 col-form-label mb-2">Nombre</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="pais" placeholder="Perú">
+                <input type="text" class="form-control" id="name" name="name" value="{{ $alumnos->name }}" required>
                 </div>
             </div>
 
             <div class="form-group row color py-5 my-5 justify-content-center align-items-center">
-                <label for="nombres" class="col-sm-5 col-form-label mb-2">Nombres</label>
+                <label for="description" class="col-sm-5 col-form-label mb-2">Formación academica y estudios</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="nombres" placeholder="Khail Andres Mogollon Buitron">
+                <textarea class="form-control ckeditor" name="description" id="description" value="{{ $alumnos->description }}" required></textarea>
                 </div>
             </div>
 
             <div class="form-group row color2 py-5 my-5 justify-content-center align-items-center">
-                <label for="descripcion" class="col-sm-5 col-form-label mb-2">Formación Academia y estudios</label>
+                <label for="image" class="col-sm-5 col-form-label mb-2">Foto del alumno</label>
                 <div class="col-sm-6">
-                    <textarea [froalaEditor]="froala_options" type="text" class="form-control expandir" id="descripcion"></textarea>
+                    <input type="file" class="form-control" id="image" name="image" required>
                 </div>
             </div>
 
             <div class="text-center completar mb-5">
-                <a href="#" class="btn btn-primary">Guardar Cambios</a>
+                <button class="btn btn-primary" type="submit">
+                        Guardar Cambios
+                </button>
+                <!--<a href="#" class="btn btn-primary">Guardar Cambios</a>-->
             </div>
 
         </form>

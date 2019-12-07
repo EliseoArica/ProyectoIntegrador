@@ -77,8 +77,6 @@
 
 
 
-
-    <script src="{{ URL::asset('assets/js/navbar-animation.js')}}"></script>
     <script src="{{ URL::asset('assets/js/jquery.slim.min.js')}}"></script>
     <script src="{{ URL::asset('assets/js/popper.min.js')}} "></script>
     <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>

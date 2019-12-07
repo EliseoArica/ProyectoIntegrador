@@ -29,12 +29,13 @@ Route::get('/register-alumno', function () {
     return view('inicio.registerAlumno');
 })->name('register_alumno');
 
+Route::post('/register-alumno', 'User\UserController@store')->name('registrar_alumno');
+
 Route::get('/register-empresa', function () {
     return view('inicio.registerEmpresa');
 })->name('register_empresa');
 
 Route::post('/register-empresa', 'User\UserController@registrarEmpresa')->name('registro_empresa');
-Route::post('/register-alumno', 'User\UserController@store')->name('registrar_alumno');
 
 
 
@@ -56,9 +57,11 @@ Route::get('/postulaciones', function () {
     return view('usuarios.alumno.postulaciones');
 })->name('postulaciones');
 
-Route::get('/editar-alumno', function () {
-    return view('usuarios.alumno.editar');
-})->name('editar_alumno');
+
+Route::get('/editar_alumno', 'User\UserController@mostrarAlumno')->name('editar_alumno');
+
+Route::put('/alumno_actualizado', 'User\UserController@actualizarAlumno')->name('actualizar_alumno');
+
 
 Route::get('/detalle-oferta', function () {
     return view('usuarios.alumno.detalle');
@@ -78,6 +81,10 @@ Route::get('/detalle-postulante', function () {
 Route::get('/editar-empresa', function () {
     return view('usuarios.empresa.editar');
 })->name('editar_empresa');
+
+Route::get('/editar_empresa', 'User\UserController@mostrarEmpresa')->name('editar_empresa');
+
+Route::put('/empresa_actualizada', 'User\UserController@actualizarEmpresa')->name('actualizar_empresa');
 
 Route::get('/postulante-oferta', function () {
     return view('usuarios.empresa.postulanteoferta');

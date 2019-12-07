@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use DB;
+use Auth;
 use App\User;
 use App\Student;
 use App\Company;
@@ -99,20 +100,145 @@ class UserController extends Controller
     }
 
 
-
-    public function editarAlumno(User $user)
+    public function mostrarAlumno()
     {
-        $usuario = User::findOrFail($id);
+        $user = User::find(Auth::user()->id);
+
+        $usuarios = Auth::user();
         
-        return response()->json(['data' => $usuario], 200);
+        $alumnos = Auth::user()->student;
+
+        if(empty($user)){
+            return redirect()->back();
+        }
+       return view('usuarios.alumno.editar')->with('user', $user)->with('usuarios', $usuarios)->with('alumnos', $alumnos);
     }
 
 
-    public function editarEmpresa(User $user)
+
+
+    public function actualizarAlumno(Request $request)
     {
-        $usuario = User::findOrFail($id);
+        $usuario = User::find(Auth::User()->id);
+
+        $usu = Auth::user();
+
+        $student = Auth::user()->student;
+
+
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $file->move(\public_path().'/avatars/',$filename);
+
+            $usu->email = $request->get('email');
+            $student->name = $request->get('name');
+            $student->description = $request->get('description');
+            $student->image = $filename;
+
+            $usu->student()->save($student);
+
+            return redirect('editar_alumno');
+        }
         
-        return response()->json(['data' => $usuario], 200);
+        return redirect()->back();
+
+    }
+
+    /*
+    public function update(Request $request){
+        $usuario = User::find(Auth::User()->id);
+        if(empty($usuario)){
+           return redirect()->back();
+        }
+        $usuario->fill($request->all());
+        $usuario->save();
+        return redirect(route('index'));
+     }*
+
+    /*
+        $user = User::find(Auth::User()->id);
+    
+        $student = Auth::user()->student;
+    
+        $usu = Auth::user();
+
+        $rules = [
+            //'email'            =>  'email|unique:users,email,' . $user->id,
+            'name'             =>  'required|alpha',
+            'description'      =>  'required|alpha',
+            //'image'            =>  'required|image|mimes:jpg,jpeg,png,gif'
+        ];
+    
+    
+        $validator = \Validator::make($request->only('name', 'description'), $rules);
+    
+        if($validator->fails())
+        {
+            return redirect('visualizar')
+                ->withErrors($validator)
+                ->withInput();
+        }else{
+            $user->email = $request->get('email');
+            $student->name = $request->get('name');
+            $student->description = $request->get('description');
+            $student->image = $request->get('image');
+    
+            $usu->student()->save($student);
+    
+            return redirect('editar_alumno');
+     *   }*/
+
+    
+    
+
+
+    public function mostrarEmpresa()
+    {
+        $user = User::find(Auth::user()->id);
+
+        $usuarios = Auth::user();
+        
+        $empresa = Auth::user()->company;
+
+        if(empty($user)){
+            return redirect()->back();
+        }
+       return view('usuarios.empresa.editar')->with('user', $user)->with('usuarios', $usuarios)->with('empresa', $empresa);
+    }
+    
+
+    public function actualizarEmpresa(Request $request)
+    {
+        $usuario = User::find(Auth::User()->id);
+
+        $usu = Auth::user();
+
+        $company = Auth::user()->company;
+
+
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $file->move(\public_path().'/logo/',$filename);
+
+            $usu->email = $request->get('email');
+            $company->name = $request->get('name');
+            $company->description = $request->get('business_name');
+            $company->description = $request->get('representative');
+            $company->description = $request->get('ruc');
+            $company->description = $request->get('description');
+            $company->image = $filename;
+
+            $usu->company()->save($company);
+
+            return redirect('editar_empresa');
+        }
+        
+        return redirect()->back();
+
     }
 
 
