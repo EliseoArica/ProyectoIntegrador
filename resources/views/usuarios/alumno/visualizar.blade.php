@@ -78,132 +78,27 @@
                             </div>
                         </div>
                     </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo4.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">Front-end</h5>
-
-
+                    @foreach($ofertas as $oferta)
+                        <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
+                            <div class="d-flex">
+                                <div class="imagen">
+                                    <img src="logo/{{$oferta->company->logo}}" class="img-fluid img" alt="">
                                 </div>
                                 <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo3.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">Back-end</h5>
+                                    <div class="d-flex w-100">
+                                        <h5 class="mb-1">{{$oferta->title}}</h5>
 
 
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo4.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">Front-end</h5>
-
-
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1">{{$oferta->address}}</p>
+                                        <small>{{$oferta->salary}}</small>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo2.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">UX-Designer</h5>
-
-
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo4.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">Front-end</h5>
-
-
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo3.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">Back-end</h5>
-
-
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo2.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1">UX-Designer</h5>
-
-
-                                </div>
-                                <div>
-                                    <p class="mb-1">Dirección</p>
-                                    <small>Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @endforeach
+                    
                 </div>
                 
                 <nav aria-label="Page navigation example">

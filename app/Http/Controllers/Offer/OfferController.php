@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Offer;
 
+use App\User;
+use Auth;
 use App\Offer;
+use App\Company;
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +19,22 @@ class OfferController extends Controller
      */
     public function index()
     {
-        return view('usuarios.alumno.visualizar');
+        $ofertas = Offer::paginate(8);
+        
+        //$empresas = Offer::all()->company;
+        //$datos2['empresas'] = Offer::all()->company;
+        /*foreach ($ofertas as $oferta) {
+            return $oferta->company->logo;
+        }
+        */
+        return view('usuarios.alumno.visualizar', compact('ofertas'));//->with('ofertas', $ofertas);
+
+        //return response()->json(['data' => $ofertas], 200);
+        /*
+
+        }
+        */
+
     }
 
     /**
