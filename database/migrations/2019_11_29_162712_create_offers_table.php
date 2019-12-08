@@ -21,11 +21,13 @@ class CreateOffersTable extends Migration
             
             $table->bigIncrements('id')->autoIncrement();
             $table->string('title');
-            $table->char('estado', 1)->default(Offer::OFERTA_ACTIVA);
-            $table->dateTime('expiration_date');
             $table->text('description');
+            $table->text('functions');
+            $table->text('requirements');
             $table->string('salary');
             $table->string('address');
+            $table->char('status', 1)->default(Offer::OFERTA_ACTIVA);
+            $table->dateTime('expiration_date');
             $table->timestamps();
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('category_id');

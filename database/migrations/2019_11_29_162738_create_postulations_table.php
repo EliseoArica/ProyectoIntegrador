@@ -19,13 +19,14 @@ class CreatePostulationsTable extends Migration
             $table->collation = 'utf8_general_ci';
             
             $table->bigIncrements('id')->autoIncrement();
-            $table->text('answer');
+            $table->text('your_experience');
+            $table->text('why_interested');
+            $table->text('why_you');
+            $table->string('curriculum');
             $table->timestamps();
-            $table->unsignedBigInteger('question_id');
             $table->unsignedBigInteger('student_id');
             $table->unsignedBigInteger('offer_id');
 
-            $table->foreign('question_id')->references('id')->on('questions');
             $table->foreign('student_id')->references('id')->on('students');
             $table->foreign('offer_id')->references('id')->on('offers');
         });

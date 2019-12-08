@@ -9,13 +9,12 @@ class Postulation extends Model
     protected $table = 'postulations';
 
     protected $fillable = [
-        'answer',
-        'question_id',
+        'your_experience',
+        'why_interested',
+        'why_you',
+        'curriculum',
         'student_id',
         'offer_id',
     ];
 
-    public function question() {
-        return $this->belongsTo('App\Question', 'question_id');
-    }
 }

@@ -19,21 +19,19 @@ class Offer extends Model
 
     protected $fillable = [
         'title',
-        'status',
-        'expiration_date',
         'description',
+        'functions',
+        'requirements',
         'salary',
         'address',
+        'expiration_date',
+        'status',
         'company_id',
         'category_id',
     ];
 
     public function estaExpirada() {
         return $this->status == Offer::OFERTA_CADUCADA;
-    }
-
-    public function questions() {
-        return $this->hasMany('App\Question');
     }
 
     public function students() {
