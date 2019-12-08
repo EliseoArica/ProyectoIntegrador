@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="limiter animated fadeIn">
-    <div class="container-fluid fondo container-login100">
+    <div class="container-fluid fondorporsia container-login100">
         <div class="wrap-login100">
             <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" method="POST" action="{{route('registrar_alumno')}}">
                 @csrf 

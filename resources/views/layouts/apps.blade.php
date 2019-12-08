@@ -76,7 +76,7 @@
 
     @yield('content')
 
-    <footer class="footer-sitio  pie">
+    <footer class="footer-sitio  pie pt-5">
         <div class="container">
             <div class="row pt-4 justify-content-around align-content-center">
                 <div class="col-md-6">

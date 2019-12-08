@@ -46,12 +46,13 @@ Route::get('/inicio', function () {
 })->name('inicio');
 
 Route::get('/visualizar', 'Offer\OfferController@index')->name('visualizar'); 
-Route::get('/detalle_oferta', 'Offer\OfferController@show')->name('detalle_oferta');
+Route::get('/detalle_oferta/{id}', 'Offer\OfferController@show')->name('detalle_oferta');
 
 
-Route::get('/postular', function () {
-    return view('usuarios.alumno.postular');
-})->name('postular');
+Route::get('/postular/{id}', 'Postulation\PostulationController@show')->name('postular_oferta');
+
+Route::post('/postular_oferta/{id}', 'Postulation\PostulationController@store')->name('postular');
+
 
 Route::get('/postulaciones', function () {
     return view('usuarios.alumno.postulaciones');

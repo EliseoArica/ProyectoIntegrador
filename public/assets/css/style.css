@@ -11,7 +11,7 @@
 /** Fondo **/
 
 .fondo {
-    background-image: url("../../images/fondoprincipal.jpg.png");
+    background-image: url("../../images/inicio.svg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -20,6 +20,62 @@
 
 @media (min-width: 992px) {
     .fondo {
+        background-size: cover;
+    }
+}
+
+.fondologin {
+    background-image: url("../../images/paralosdetalles.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) {
+    .fondologin {
+        background-size: cover;
+    }
+}
+
+.fondoregistrarse {
+    background-image: url("../../images/fondoneto.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) {
+    .fondoregistrarse {
+        background-size: cover;
+    }
+}
+
+.fondorporsia {
+    background-image: url("../../images/fondoporsia.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) {
+    .fondorporsia {
+        background-size: cover;
+    }
+}
+
+.fondoporsia {
+    background-image: url("../../images/paver.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+@media (min-width: 992px) {
+    .fondoporsia {
         background-size: cover;
     }
 }

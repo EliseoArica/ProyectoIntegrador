@@ -17,4 +17,13 @@ class Postulation extends Model
         'offer_id',
     ];
 
+    public function offer() {
+        return $this->belongsTo('App\Offer', 'offer_id');
+    }
+
+    public function student() {
+        return $this->belongsTo('App\Student', 'student_id');
+    }
+
+
 }

@@ -64,9 +64,13 @@ class OfferController extends Controller
      * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function show(Offer $offer)
+    public function show($id)
     {
-        return view('usuarios.alumno.detalle');
+
+        return view('usuarios.alumno.detalle', [
+            'ofertas' =>  Offer::find($id)
+        ]);
+        
     }
 
     /**

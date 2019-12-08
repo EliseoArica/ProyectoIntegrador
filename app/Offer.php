@@ -46,4 +46,8 @@ class Offer extends Model
         return $this->belongsTo('App\Company', 'company_id');
     }    
 
+    public function postulation() {
+        return $this->hasMany('App\Postulation', 'offer_id');
+    }
+
 }

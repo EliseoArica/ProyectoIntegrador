@@ -18,8 +18,8 @@
 
     <div class="container pt-4 animated fadeIn">
         <div class="row justify-content-around">
-            <aside class="col-sm-4">
-                <div class="card mb-3">
+            <aside class="col-md-4">
+                <div class="card mb-5">
                     <article class="card-group-item">
 
                         <header class="card-header filtro-header">
@@ -60,26 +60,10 @@
 
             </aside>
 
-            <main class="col-sm-8 contenido-principal">
+            <main class="col-md-8 contenido-principal">
                 <div class="list-group">
-                    <a href="{{route('detalle_oferta')}}" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
-                        <div class="d-flex">
-                            <div class="imagen">
-                                <img src={{ asset('images/Logo2.PNG') }} class="img-fluid img" alt="">
-                            </div>
-                            <div>
-                                <div class="d-flex w-100">
-                                    <h5 class="mb-1 text">UX-Designer</h5>
-                                </div>
-                                <div>
-                                    <p class="mb-1 text">Dirección</p>
-                                    <small class="text">Sueldo</small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
                     @foreach($ofertas as $oferta)
-                        <a href="detalleOferta.html" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
+                        <a href="{{ route('detalle_oferta', $oferta) }}" class="list-group-item list-group-item-action flex-column align-items-start mb-4">
                             <div class="d-flex">
                                 <div class="imagen">
                                     <img src="logo/{{$oferta->company->logo}}" class="img-fluid img" alt="">
@@ -91,8 +75,8 @@
 
                                     </div>
                                     <div>
-                                        <p class="mb-1">{{$oferta->address}}</p>
-                                        <small>{{$oferta->salary}}</small>
+                                        <p class="mb-1">Dirección: {{$oferta->address}}</p>
+                                        <small>Salario: {{$oferta->salary}}</small>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +86,7 @@
                 </div>
                 
                 <nav aria-label="Page navigation example">
-                    <ul class="pagination justify-content-center mb-5">
+                    <ul class="pagination justify-content-center mt-5 pt-5 mb-5 pb-5">
                         <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>

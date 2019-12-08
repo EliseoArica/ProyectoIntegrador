@@ -10,43 +10,47 @@
 <section class="titulo animated fadeIn">
     <div class="container">
         <h1 class="text-uppercase pt-5 mt-3  encabezado-postulaciones">
-            Postular a Front-end
+            Postular a {{$ofertas->title}}
         </h1>
     </div>
 </section>
 <div class="editar animated fadeIn">
     <div class="container">
         <hr>
-        <form>
+        <form action="{{route('postular', $ofertas)}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('POST')
             <div class="form-group color py-3 my-5  justify-content-center align-items-centers">
-                <label for="formacion" class="col-sm-12 col-form-label mb-2">Cuéntanos sobre tu formación académica o alguna experiencia laboral</label>
+                <label for="your_experience" class="col-sm-12 col-form-label mb-2">Cuéntanos sobre tu formación académica o alguna experiencia laboral</label>
                 <div class="col-sm-12 pb-3">
-                    <textarea [froalaEditor]="froala_options" type="email" class="form-control expandir" id="formacion"></textarea>
+                    <textarea class="form-control ckeditor" name="your_experience" id="your_experience" required ></textarea>
                 </div>
             </div>
 
             <div class="form-group color2 py-3 my-5  justify-content-center align-items-center">
-                <label for="interesa" class="col-sm-12 col-form-label mb-2">¿Por qué te interesa este empleo en particular?</label>
+                <label for="why_interested" class="col-sm-12 col-form-label mb-2">¿Por qué te interesa este empleo en particular?</label>
                 <div class="col-sm-12 pb-3">
-                    <textarea [froalaEditor]="froala_options" type="text" class="form-control " id="interesa"></textarea>
+                    <textarea class="form-control ckeditor" name="why_interested" id="why_interested" required ></textarea>
                 </div>
             </div>
 
             <div class="form-group color py-3 my-5 justify-content-center align-items-center">
-                <label for="mejor" class="col-sm-12 col-form-label mb-2">¿Por qué crees que deberíamos elegirte para este empleo?</label>
+                <label for="why_you" class="col-sm-12 col-form-label mb-2">¿Por qué crees que deberíamos elegirte para este empleo?</label>
                 <div class="col-sm-12 pb-3">
-                    <textarea [froalaEditor]="froala_options" type="text" class="form-control expandir" id="mejor"></textarea>
+                    <textarea class="form-control ckeditor" name="why_you" id="why_you" required></textarea>
                 </div>
             </div>
 
             <div class="form-group row color2 py-5 my-5 justify-content-center align-items-center">
-                <label for="exampleFormControlFile1" class="col-sm-6 col-form-label mb-2">Sube tu CV <p class="text-muted">Subir curriculum vitae en formato PDF</p></label>
+                <label for="curriculum" class="col-sm-6 col-form-label mb-2">Sube tu CV <p class="text-muted">Subir curriculum vitae en formato PDF</p></label>
                 <div class="col-sm-5 pl-5">
-                    <angular-file-uploader [config]="afuConfig"></angular-file-uploader>
+                        <input type="file" class="form-control-file" id="curriculum" name="curriculum">
                 </div>
             </div>
-            <div class="text-center completar">
-                <a href="#" class="btn btn-primary mb-5">Completar solicitud</a>
+            <div class="text-center completar mb-5">
+                    <button class="btn btn-primary" type="submit">
+                            Completar solicitud
+                    </button>
             </div>
         </form>
     </div>
