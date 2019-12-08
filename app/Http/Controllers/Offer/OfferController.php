@@ -55,7 +55,32 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $reglas = [
+            'title' => 'required',
+            'description' => 'required',
+            'functions' => 'required',
+            'requirements' => 'required',
+            'salary' => 'required',
+            'address' => 'required',
+        ];
+
+        $this->validate($request, $reglas); 
+
+        $offer = Offer::create([
+            'title' => $request->get('title'),
+            'description' => $request->get('description'),
+            'functions' => $request->get('functions'),
+            'requirements' => $request->get('requirements'),
+            'salary' => $request->get('salary'),
+            'address' => $request->get('address')
+        ]);
+        
+        $offer->save();
+        */
+
+        return view('usuarios.empresa.crear');
+
     }
 
     /**

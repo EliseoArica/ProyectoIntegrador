@@ -68,9 +68,7 @@ Route::put('/alumno_actualizado', 'User\UserController@actualizarAlumno')->name(
 
 // RUTAS DE LA EMPRESA 
 
-Route::get('/crear-oferta', function () {
-    return view('usuarios.empresa.crear');
-})->name('crear_oferta');
+Route::get('/crear-oferta', 'Offer\OfferController@store')->name('crear_oferta');
 
 Route::get('/detalle-postulante', function () {
     return view('usuarios.empresa.detalle');
