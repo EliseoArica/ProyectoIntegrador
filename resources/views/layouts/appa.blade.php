@@ -1,95 +1,104 @@
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
+<html>
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>Bootstrap Dashboard by Bootstrapious.com</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css')}}">
+    <!-- Font Awesome CSS-->
     <script src="https://kit.fontawesome.com/814070d98f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
-    <link href="https://fonts.googleapis.com/css?family=Italianno|Lato:400,700,900|Raleway:400,700,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i&display=swap" rel="stylesheet">
-    <title> Admin | @yield('title') </title>
-</head>
-
-<body class="todo">
-    <!-- Add Your HTML here -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary stroke">
-            <!--BARRA DE NAVEGACIÓN-->
-            <a class="navbar-brand ml-4" href="{{route('postulantes')}}">
-              Pasantias
-          </a>
-            <button class="navbar-toggler hamburguesa" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active mx-4">
-                        <a class="nav-link" href="{{route('crear_oferta')}}">Alumnos<span class=" sr-only ">(current)</span></a>
-                    </li>
-
-                    <li class="nav-item mx-4">
-                        <a class="nav-link " href="{{route('postulantes')}}">Empresas</a>
-                    </li>
-
-                    <li class="nav-item active mx-4">
-                        <a class="nav-link" href="{{route('editar_empresa')}}">Ofertas Laborales<span class=" sr-only ">(current)</span></a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav mr-right mr-4" id="ejm2">
-                    <li class="nav-item dropdown mx-4">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{auth()->user()->email}}
-                      </a>
-                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                            {{ __('Cerrar sesión') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    @yield('content')
-
-    <footer class="footer-sitio  pie">
-        <div class="container">
-            <div class="row pt-4 justify-content-around align-content-center">
-                <div class="col-md-6">
-                    <h3 class="text-uppercase text-center pt-5 pb-3">Acerca de nosotros</h3>
-                    <p class="text-justify text-center ">
-                        Somos el Grupo 2 y este es nuestro proyecto integrador.
-                    </p>
-                </div>
-
-                <div class="col-md-6 text-center py-4">
-                    <img src={{ asset('images/Tecsup1.PNG') }} class="img-fluid">
-                </div>
-
-                <hr class="w-100 mt-4">
-                <p class="text-center copyright w-100 no-gutters">Khail Mogollon 2019 &copy;. Todos los derechos reservados</p>
-            </div>
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/fontastic.css')}}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/style.blue.css')}}">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center">
+          <!-- User Info-->
+          <div class="sidenav-header-inner text-center">
+            <span>Bienvenido</span><h2 class="h5">Administrador</h2>
+          </div>
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong>B</strong><strong class="text-primary">D</strong></a></div>
         </div>
-    </footer>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          <h5 class="sidenav-heading">Menu</h5>
+          <ul id="side-main-menu" class="side-menu list-unstyled">                  
+            <li><a href="{{route('admin_dashboard')}}"> <i class="icon-home"></i>Dashboard                             </a></li>
+            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tablas </a>
+              <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
+                <li><a href="{{route('admin_tablas_alumno')}}">Alumnos</a></li>
+                <li><a href="{{route('admin_tablas_empresa')}}">Empresas</a></li>
+              </ul>
+            </li>
+            <li><a href="{{route('admin_estadistica')}}"> <i class="fa fa-bar-chart"></i>Estadisticas                             </a></li>
+            <li><a href="{{route('postulantes')}}"> <i class="fa fa-sign-out"></i>Salir                             </a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><strong class="text-primary">Dashboard</strong></div></a></div>
+            </div>
+          </div>
+        </nav>
+      </header>
 
 
+      @yield('content')
 
+    
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Khail Mogollon &copy; 2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>  <a href="https://bootstrapious.com/p/bootstrap-4-dashboard" class="external"></a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
     <script src="{{ URL::asset('assets/js/jquery.slim.min.js')}}"></script>
     <script src="{{ URL::asset('assets/js/popper.min.js')}} "></script>
     <script src="{{ URL::asset('assets/js/bootstrap.min.js')}}"></script>
-</body>
-
+    <script src="{{ URL::asset('assets/js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/jquery.cookie/jquery.cookie.js')}}"> </script>
+    <script src="{{ URL::asset('assets/vendor/chart.js/Chart.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/charts-home.js')}}"></script>
+    <!-- Main File-->
+    <script src="{{ URL::asset('assets/js/front.js')}}"></script>
+    <script src="{{ URL::asset('assets/js/charts-custom.js')}}"></script>
+  </body>
 </html>
+ 

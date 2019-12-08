@@ -28,7 +28,7 @@ class LoginController extends Controller
             {
                 return redirect()->route('postulantes');
             }else{
-                return redirect()->route('home');
+                return redirect()->route('admin_dashboard');
             }
         }
 

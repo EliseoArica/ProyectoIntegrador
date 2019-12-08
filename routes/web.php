@@ -92,6 +92,28 @@ Route::get('/postulantes', function () {
 })->name('postulantes');
 
 
+// Rutas del administrador
+
+
+Route::get('/admin-dashboard', function () {
+    return view('usuarios.admin.dashboard');
+})->name('admin_dashboard');
+
+Route::get('/admin-alumno', function () {
+    return view('usuarios.admin.tableStudent');
+})->name('admin_tablas_alumno');
+
+Route::get('/admin-empresa', function () {
+    return view('usuarios.admin.tableCompany');
+})->name('admin_tablas_empresa');
+
+Route::get('/admin-estadisticas', function () {
+    return view('usuarios.admin.chart');
+})->name('admin_estadistica');
+
+
+
+
 
 
 
