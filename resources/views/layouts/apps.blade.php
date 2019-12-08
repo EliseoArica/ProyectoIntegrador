@@ -47,7 +47,7 @@
                             
                         <li class="nav-item">
                             <div class="avatar_mask">
-                                <img src="avatars/{{auth()->user()->student->image}}" class="avatar_nav">
+                                <img src="avatars/{{auth()->user()->student->image}}" class="image-fluid rounded-circle" height=50px width=50px>
                             </div>
                         </li>
 

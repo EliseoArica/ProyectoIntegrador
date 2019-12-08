@@ -15,6 +15,10 @@ class CreateOffersTable extends Migration
     public function up()
     {
         Schema::create('offers', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8';
+            $table->collation = 'utf8_general_ci';
+            
             $table->bigIncrements('id')->autoIncrement();
             $table->string('title');
             $table->char('estado', 1)->default(Offer::OFERTA_ACTIVA);
