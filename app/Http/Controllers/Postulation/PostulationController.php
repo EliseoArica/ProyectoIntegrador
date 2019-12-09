@@ -69,11 +69,11 @@ class PostulationController extends Controller
 
             $postulation->save();
 
-            return redirect('postulaciones');
+            return redirect('mis_postulaciones');
      
         }
 
-        return redirect()->back();
+        return redirect('visualizar');
 
 
     }

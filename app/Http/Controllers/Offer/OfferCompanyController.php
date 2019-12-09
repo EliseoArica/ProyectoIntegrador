@@ -6,6 +6,7 @@ use Auth;
 use App\Buyer;
 use App\Offer;
 use App\Company;
+use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

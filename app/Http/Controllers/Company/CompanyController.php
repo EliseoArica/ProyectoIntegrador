@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Company;
 
+use DB;
 use Auth;
 use App\Offer;
 use App\Company;
+use App\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -49,11 +51,15 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
+        $postulantes = DB::select('CALL sp_obtener_postulantes(?)', array($id));
+        return view('usuarios.empresa.prueba', compact('postulantes'));
+        /*
         $user = Auth::user()->company->offers->students;
         return view('usuarios.empresa.postulanteoferta', [
             'ofertas' =>  Offer::find($id),
             'postulaciones' => $user
         ]);
+        */
     }
 
     /**

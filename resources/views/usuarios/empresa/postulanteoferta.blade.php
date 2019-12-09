@@ -1,7 +1,7 @@
 @extends('layouts.appc')
 
 @section('title')
-    Postulante segun oferta  
+    Postulante segun oferta
 @endsection
 
 @section('content')
