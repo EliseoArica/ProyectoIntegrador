@@ -49,7 +49,7 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        $user = Auth::user()->company->offers->postulations;
+        $user = Auth::user()->company->offers->students;
         return view('usuarios.empresa.postulanteoferta', [
             'ofertas' =>  Offer::find($id),
             'postulaciones' => $user
