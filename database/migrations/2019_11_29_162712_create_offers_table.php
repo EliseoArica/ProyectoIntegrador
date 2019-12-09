@@ -27,7 +27,7 @@ class CreateOffersTable extends Migration
             $table->string('salary');
             $table->string('address');
             $table->char('status', 1)->default(Offer::OFERTA_ACTIVA);
-            $table->dateTime('expiration_date');
+            $table->dateTime('expiration_date')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('company_id');
             $table->unsignedBigInteger('category_id');

@@ -33,7 +33,7 @@
                     </li>
 
                     <li class="nav-item active mx-4">
-                        <a class="nav-link" href="{{route('postulaciones')}}">Mis postulaciones<span class=" sr-only ">(current)</span></a>
+                        <a class="nav-link" href="{{route('mis_postulaciones')}}">Mis postulaciones<span class=" sr-only ">(current)</span></a>
                     </li>
 
                     <li class="nav-item active mx-4">

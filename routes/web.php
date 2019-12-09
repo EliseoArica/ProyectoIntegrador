@@ -24,7 +24,6 @@ Route::get('/login-final', function () {
 
 Route::post('/login/general', 'LoginController@login')->name('loginGeneral');
 
-
 Route::get('/register-alumno', function () {
     return view('inicio.registerAlumno');
 })->name('register_alumno');
@@ -46,29 +45,27 @@ Route::get('/inicio', function () {
 })->name('inicio');
 
 Route::get('/visualizar', 'Offer\OfferController@index')->name('visualizar'); 
-Route::get('/detalle_oferta/{id}', 'Offer\OfferController@show')->name('detalle_oferta');
 
+Route::get('/detalle_oferta/{id}', 'Offer\OfferController@show')->name('detalle_oferta');
 
 Route::get('/postular/{id}', 'Postulation\PostulationController@show')->name('postular_oferta');
 
 Route::post('/postular_oferta/{id}', 'Postulation\PostulationController@store')->name('postular');
 
-
-Route::get('/postulaciones', function () {
-    return view('usuarios.alumno.postulaciones');
-})->name('postulaciones');
-
-
 Route::get('/editar_alumno', 'User\UserController@mostrarAlumno')->name('editar_alumno');
 
 Route::put('/alumno_actualizado', 'User\UserController@actualizarAlumno')->name('actualizar_alumno');
 
-
+Route::get('/mis_postulaciones', 'Offer\PostulationController@index')->name('mis_postulaciones');
 
 
 // RUTAS DE LA EMPRESA 
 
-Route::get('/crear-oferta', 'Offer\OfferController@store')->name('crear_oferta');
+
+
+Route::get('/crear', 'Offer\OfferController@create')->name('crear_oferta');
+
+Route::post('/crear-oferta', 'Offer\OfferController@store')->name('registrar_oferta');
 
 Route::get('/detalle-postulante', function () {
     return view('usuarios.empresa.detalle');
@@ -86,9 +83,11 @@ Route::get('/postulante-oferta', function () {
     return view('usuarios.empresa.postulanteoferta');
 })->name('postulante_oferta');
 
-Route::get('/postulantes', function () {
-    return view('usuarios.empresa.postulantes');
-})->name('postulantes');
+Route::get('/postulantes', 'Offer\OfferCompanyController@index')->name('postulantes');
+
+Route::get('/general_postulantes/{id}', 'Company\CompanyController@show')->name('general_postulantes');
+
+Route::get('/card_estudiantes', 'Company\CompanyController@index')->name('card_estudiantes');
 
 
 // Rutas del administrador

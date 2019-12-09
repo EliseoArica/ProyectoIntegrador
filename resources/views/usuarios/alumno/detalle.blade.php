@@ -19,37 +19,37 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-12">
-                <p class="lead text-justify mb-2">
-                    {{$ofertas->description}}
-                </p>
+
+                <h4 class="mt-5 mb-4">
+                        Descripción de la empresa
+                </h4>
+
+                <div class="lead text-justify mb-2">
+                        {!!$ofertas->description!!}
+                </div>
+                    
+ 
 
                 <h4 class="mt-5 mb-4">
                     Funciones del cargo
                 </h4>
 
-                <ul>
-                    <li class="lead text-justify">{{$ofertas->functions}}</li>
-                    <li class="lead text-justify">{{$ofertas->functions}}.</li>
-                    <li class="lead text-justify">{{$ofertas->functions}}</li>
-                    <li class="lead text-justify">{{$ofertas->functions}}</li>
-                    <li class="lead text-justify">{{$ofertas->functions}}</li>
-                    <li class="lead text-justify">{{$ofertas->functions}}</li>
-                </ul>
+                <div class="lead text-justify mb-2">
+                        {!!$ofertas->functions!!}
+                </div>
+
+
 
                 <h4 class="mt-5 mb-4">
                     Requerimientos del cargo
                 </h4>
 
-                <ul>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
-                    <li class="lead text-justify">{{$ofertas->requirements}}</li>
 
-                </ul>
+                <div class="lead text-justify mb-2">
+                        {!!$ofertas->requirements!!}
+                </div>
+
+
                 <div class="text-center">
                     <a href="{{ route('postular_oferta', $ofertas) }}" class="btn btn-primary botonPostular my-5 px-3"> Postular al empleo</a>
                 </div>

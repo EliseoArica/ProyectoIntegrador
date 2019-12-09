@@ -15,12 +15,12 @@
                 </span>
 
                 <div class="wrap-input100 mb-4">
-                    <input class="input100" type="text" name="email" placeholder="Correo electrónico">
+                    <input class="input100" type="text" name="email" placeholder="Correo electrónico" required>
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 ">
-                    <input class="input100" type="password" name="password" placeholder="Contraseña">
+                    <input class="input100" type="password" name="password" placeholder="Contraseña" required>
                     <span class="focus-input100"></span>
                 </div>
 

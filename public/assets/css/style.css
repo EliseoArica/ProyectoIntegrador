@@ -729,3 +729,8 @@ nav.fill ul li a:hover:after {
     width: 64px;
     max-height: 90px;
 }
+
+.tamaño {
+    height: 120px;
+    width: 120px;
+}

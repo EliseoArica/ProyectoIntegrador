@@ -2,39 +2,26 @@
 
 namespace App\Http\Controllers\Offer;
 
-use App\User;
 use Auth;
+use App\Buyer;
 use App\Offer;
 use App\Company;
-use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OfferController extends Controller
+class OfferCompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Offer $offer)
     {
-        $ofertas = Offer::paginate(8);
-        
-        //$empresas = Offer::all()->company;
-        //$datos2['empresas'] = Offer::all()->company;
-        /*foreach ($ofertas as $oferta) {
-            return $oferta->company->logo;
-        }
-        */
-        return view('usuarios.alumno.visualizar', compact('ofertas'));//->with('ofertas', $ofertas);
-
-        //return response()->json(['data' => $ofertas], 200);
-        /*
-
-        }
-        */
-
+        $user = Auth::user()->company;
+        return view('usuarios.empresa.postulantes',[
+            'offers' => $user->offers
+        ]);
     }
 
     /**
@@ -44,10 +31,7 @@ class OfferController extends Controller
      */
     public function create()
     {
-        return view('usuarios.empresa.crear', [
-            'categorias' =>  Category::all()
-        ]);
-        
+        //
     }
 
     /**
@@ -58,33 +42,7 @@ class OfferController extends Controller
      */
     public function store(Request $request)
     {
-        $reglas = [
-            'title' => 'required',
-            'description' => 'required',
-            'functions' => 'required',
-            'requirements' => 'required',
-            'salary' => 'required',
-            'address' => 'required',
-        ];
-
-        $this->validate($request, $reglas); 
-
-        $offer = Offer::create([
-            'title' => $request->get('title'),
-            'category_id' => $request->get('category_id'),
-            'description' => $request->get('description'),
-            'functions' => $request->get('functions'),
-            'requirements' => $request->get('requirements'),
-            'salary' => $request->get('salary'),
-            'address' => $request->get('address'),
-            'company_id' => Auth::user()->company->id,
-        ]);
-        
-        $offer->save();
-        
-
-        return redirect('postulantes');
-
+        //
     }
 
     /**
@@ -93,13 +51,11 @@ class OfferController extends Controller
      * @param  \App\Offer  $offer
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Offer $offer)
     {
-
         return view('usuarios.alumno.detalle', [
             'ofertas' =>  Offer::find($id)
         ]);
-        
     }
 
     /**
