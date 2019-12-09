@@ -10,7 +10,7 @@
     <div class="container-fluid">
       <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active">Tables       </li>
+        <li class="breadcrumb-item active">Tablas</li>
       </ul>
     </div>
   </div>
@@ -18,7 +18,7 @@
     <div class="container-fluid">
       <!-- Page Header-->
       <header> 
-        <h1 class="h3 display">Tables            </h1>
+        <h1 class="h3 display">Tablas</h1>
       </header>
       <div class="row">
         <div class="col-lg">
@@ -33,35 +33,32 @@
                     <tr>
                       <th>#</th>
                       <th>Nombre</th>
-                      <th>Apellido</th>
+                      <th>Apellidos</th>
                       <th>Email</th>
-                      <th>Acciones</th>
+                      <th>ID Usuario</th>
+                      <th>Eliminar</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Khail</td>
-                      <td>Mogollon</td>
-                      <td>kmogollon1507@tecsup.edu.pe</td>
-                      <td>@</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Khail</td>
-                      <td>Mogollon</td>
-                      <td>kmogollon1507@tecsup.edu.pe</td>
-                      <td>@</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Khail</td>
-                      <td>Mogollon</td>
-                      <td>kmogollon1507@tecsup.edu.pe</td>
-                      <td>@</td>
-                    </tr>
+                    @foreach($alumnos as $alumno)
+                      <tr>
+                        <th scope="row">{{$alumno->id}}</th>
+                        <td>{{$alumno->name}}</td>
+                        <td>{{$alumno->surname}}</td>
+                        <td>{{$alumno->user->email}}</td>
+                        <td>{{$alumno->user_id}}</td>
+                        <td>
+                          <form action="{{route('eliminar_alumno', $alumno->id)}}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" onclick="return confirm('¿Desea eliminar este alumno?')" class="btn btn-primary fas fa-trash-alt"></button>
+                          </form>
+                        </td>
+                      </tr>
+                    @endforeach
                   </tbody>
                 </table>
+                {{$alumnos->links()}}
               </div>
             </div>
           </div>

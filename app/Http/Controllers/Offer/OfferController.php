@@ -44,10 +44,12 @@ class OfferController extends Controller
      */
     public function create()
     {
+
         return view('usuarios.empresa.crear', [
             'categorias' =>  Category::all()
         ]);
         
+
     }
 
     /**
