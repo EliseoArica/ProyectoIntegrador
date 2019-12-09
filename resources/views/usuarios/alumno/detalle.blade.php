@@ -7,7 +7,7 @@
 <div class="fondoporsia container-fluid pt-5 pb-3   ">
     <div class="row justify-content-center mt-4 pb-0">
         <div class="col-6 text-center mb-5">
-            <h1 class="display-3">{{$ofertas->title}}</h1>
+            <h1 class="display-3 estacosa">{{$ofertas->title}}</h1>
             <img src="logo/{{$ofertas->company->logo}}" alt="" class="mt-3">
             <h3 class="my-1">{{$ofertas->company->name}}</h3>
             <a href="{{ route('postular_oferta', $ofertas) }}" class="btn btn-primary botonPostular mt-5 px-3"> Postular al empleo</a>

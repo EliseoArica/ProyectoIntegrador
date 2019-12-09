@@ -734,3 +734,9 @@ nav.fill ul li a:hover:after {
     height: 120px;
     width: 120px;
 }
+
+@media (max-width: 1014px) {
+    .estacosa {
+        font-size: 40px;
+    }
+}
