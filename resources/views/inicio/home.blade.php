@@ -54,7 +54,7 @@
     <div class="row py-3">
         <div class="col-md-4 mb-4">
             <div class="card card2 text-center">
-                <img src={{ asset('images/Captura3.png') }} class="card-img-top imagelogo" alt="Logo">
+                <img src={{ asset('images/Captura3.PNG') }} class="card-img-top imagelogo" alt="Logo">
                 <div class="card-body">
                     <h5 class="card-title text-uppercase text-left">Front-End</h5>
                     <h6 class="card-subtitle mb-3 text-muted text-left">Apm Terminal</h6>

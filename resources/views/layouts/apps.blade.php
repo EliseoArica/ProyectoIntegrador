@@ -87,7 +87,7 @@
                 </div>
 
                 <div class="col-md-6 text-center py-4">
-                    <img src={{ asset('images/Tecsup1.PNG') }} class="img-fluid">
+                    <img src={{ asset('images/tecsup1.png') }} class="img-fluid">
                 </div>
 
                 <hr class="w-100 mt-4">
