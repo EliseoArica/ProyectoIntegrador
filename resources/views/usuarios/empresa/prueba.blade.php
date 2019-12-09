@@ -9,9 +9,9 @@
     <div class="container-fluid">
       <!-- Page Header-->
       <header> 
-        <h1 class="h3 display">Postulantes</h1>
+        <h1 class="h3 display mt-5">Postulantes</h1>
       </header>
-      <div class="row">
+      <div class="row mt-5 mb-5 pb-5">
         <div class="col-lg">
           <div class="card">
             <div class="card-body">
@@ -43,5 +43,9 @@
       </div>
     </div>
   </section>
+  <br>
+  <br>
+<div class="mb-5 pb-5"></div>
+<div class="mb-5 pb-5"></div>
   @endsection
     

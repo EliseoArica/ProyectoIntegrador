@@ -27,7 +27,8 @@ class LoginController extends Controller
             elseif ($user->esEmpresa())
             {
                 return redirect()->route('postulantes');
-            }else{
+            }else {
+
                 return redirect()->route('admin_dashboard');
             }
         }

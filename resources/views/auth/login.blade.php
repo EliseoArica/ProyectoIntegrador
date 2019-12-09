@@ -46,9 +46,6 @@
                 </div>
 
 
-                <div class="container-login100-form-btn mt-4">
-                    <a href="#" class="botonTecsup"><i class="fab fa-google fa-lg pr-2"></i>Ingresar con correo de Tecsup</a>
-                </div>
 
                 <div class="flex-col-c p-t-110 p-b-40">
                 </div>
