@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Postulation;
 use Auth;
 use App\User;
 use App\Offer;
+use App\Company;
 use App\Postulation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

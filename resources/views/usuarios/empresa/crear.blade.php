@@ -17,7 +17,7 @@
 <div class="editar">
     <div class="container">
         <hr>
-        <form  >
+        <form">
 
             <div class="form-group row color py-5 my-5 justify-content-center align-items-centers">
                 <label for="titulo" class="col-sm-5 col-form-label mb-2">Titulo del empleo</label>

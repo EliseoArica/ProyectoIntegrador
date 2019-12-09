@@ -54,9 +54,7 @@ Route::get('/postular/{id}', 'Postulation\PostulationController@show')->name('po
 Route::post('/postular_oferta/{id}', 'Postulation\PostulationController@store')->name('postular');
 
 
-Route::get('/postulaciones', function () {
-    return view('usuarios.alumno.postulaciones');
-})->name('postulaciones');
+Route::get('/postulaciones', 'Postulation\StudentOfferController@show')->name('postulaciones');
 
 
 Route::get('/editar_alumno', 'User\UserController@mostrarAlumno')->name('editar_alumno');
@@ -68,7 +66,7 @@ Route::put('/alumno_actualizado', 'User\UserController@actualizarAlumno')->name(
 
 // RUTAS DE LA EMPRESA 
 
-Route::get('/crear-oferta', 'Offer\OfferController@store')->name('crear_oferta');
+Route::get('/crear-oferta', 'Offer\OfferController@create')->name('crear_oferta');
 
 Route::get('/detalle-postulante', function () {
     return view('usuarios.empresa.detalle');
@@ -98,17 +96,17 @@ Route::get('/admin-dashboard', function () {
     return view('usuarios.admin.dashboard');
 })->name('admin_dashboard');
 
-Route::get('/admin-alumno', function () {
-    return view('usuarios.admin.tableStudent');
-})->name('admin_tablas_alumno');
+Route::get('/admin-alumno', 'Admin\StudentController@index')->name('admin_tablas_alumno');
 
-Route::get('/admin-empresa', function () {
-    return view('usuarios.admin.tableCompany');
-})->name('admin_tablas_empresa');
+Route::get('/admin-empresa', 'Admin\CompanyController@index')->name('admin_tablas_empresa');
 
 Route::get('/admin-estadisticas', function () {
     return view('usuarios.admin.chart');
 })->name('admin_estadistica');
+
+Route::delete('/admin/eliminar-alumno/{id}', 'Admin\StudentController@destroy')->name('eliminar_alumno');
+
+Route::delete('/admin/eliminar-empresa/{id}', 'Admin\CompanyController@destroy')->name('eliminar_empresa');
 
 
 
