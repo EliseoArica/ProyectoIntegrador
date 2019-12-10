@@ -34,4 +34,9 @@
             </div>
     </div>
 
+<br>
+<br>
+<div class="mb-5"></div>
+<div class="mb-5"></div>
+<br>
 @endsection

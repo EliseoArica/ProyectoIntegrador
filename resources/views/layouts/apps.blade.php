@@ -78,7 +78,7 @@
 
     <footer class="footer-sitio  pie pt-5">
         <div class="container">
-            <div class="row pt-4 justify-content-around align-content-center">
+            <div class="row justify-content-around align-content-center">
                 <div class="col-md-6">
                     <h3 class="text-uppercase text-center pt-5 pb-3">Acerca de nosotros</h3>
                     <p class="text-justify text-center ">
